@@ -14,6 +14,7 @@ public class Pais {
     private int id;
     private String name;
 
+    public Pais(){}
     public Pais(String name) {
         this.name = name;
     }
