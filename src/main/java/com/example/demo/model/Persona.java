@@ -9,7 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-@Table(name = "persona")
+@Table(schema = "personas", name = "persona")
 public class Persona {
     
     // creacion de campos especificando id como aunto incremement pero desde el
