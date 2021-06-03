@@ -16,10 +16,10 @@ public class Persona {
     // back-end
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
     private String name;
     private String apellido;
-    private String edad;
+    private int edad;
 
     // especificacndo que esta tabla va hacer una relacion entre ellas m-1 en este
     // caso un pais puede tener varias personas
@@ -31,7 +31,7 @@ public class Persona {
     @JoinColumn(name = "id_estado")
     private Estado estado;
 
-    public Persona(String name, String apellido, String edad, Pais pais, Estado estado) {
+    public Persona(String name, String apellido, int edad, Pais pais, Estado estado) {
         this.name = name;
         this.apellido = apellido;
         this.edad = edad;
@@ -40,11 +40,11 @@ public class Persona {
     }
     public Persona(){}
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -64,11 +64,11 @@ public class Persona {
         this.apellido = apellido;
     }
 
-    public String getEdad() {
+    public int getEdad() {
         return edad;
     }
 
-    public void setEdad(String edad) {
+    public void setEdad(int edad) {
         this.edad = edad;
     }
 
