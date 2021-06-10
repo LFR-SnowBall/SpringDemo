@@ -1,21 +1,25 @@
 package com.example.demo.model;
 
-import javax.persistence.Table;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-@Table(schema = "paises",name = "pais")
+@Table(schema = "paises", name = "pais")
 public class Pais {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
 
-    public Pais(){}
+    public Pais() {
+    }
+
     public Pais(String name) {
+        super();
         this.name = name;
     }
 
@@ -27,11 +31,11 @@ public class Pais {
         this.id = id;
     }
 
-    public String getName() {
+    public String getname() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setname(String name) {
         this.name = name;
     }
 

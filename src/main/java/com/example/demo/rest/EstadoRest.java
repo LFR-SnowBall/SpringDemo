@@ -22,7 +22,7 @@ public class EstadoRest {
     //se le dice que recibira una variable id pais la cual limpiara en la parte de abajo en el metodo 
     @GetMapping("{id}")
     private ResponseEntity<List<Estado>> getAllEstadosBYPais(@PathVariable("id") Long id_pais){
-        return ResponseEntity.ok(estadoService.findAllEstadosByidPais(id_pais));
+        return ResponseEntity.ok(estadoService.findAllByCountry(id_pais));
     }
     
 }

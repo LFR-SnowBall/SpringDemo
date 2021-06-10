@@ -14,14 +14,13 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PaisService implements PaisRepository{
+public class PaisService implements PaisRepository {
 
     @Autowired
     private PaisRepository paisRepository;
 
     @Override
     public List<Pais> findAll() {
-        // TODO Auto-generated method stub
         return paisRepository.findAll();
     }
 
@@ -46,7 +45,7 @@ public class PaisService implements PaisRepository{
     @Override
     public void flush() {
         // TODO Auto-generated method stub
-        
+
     }
 
     @Override
@@ -56,37 +55,19 @@ public class PaisService implements PaisRepository{
     }
 
     @Override
-    public <S extends Pais> List<S> saveAllAndFlush(Iterable<S> entities) {
+    public void deleteInBatch(Iterable<Pais> entities) {
         // TODO Auto-generated method stub
-        return null;
-    }
 
-    @Override
-    public void deleteAllInBatch(Iterable<Pais> entities) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void deleteAllByIdInBatch(Iterable<Long> ids) {
-        // TODO Auto-generated method stub
-        
     }
 
     @Override
     public void deleteAllInBatch() {
         // TODO Auto-generated method stub
-        
+
     }
 
     @Override
     public Pais getOne(Long id) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public Pais getById(Long id) {
         // TODO Auto-generated method stub
         return null;
     }
@@ -104,9 +85,26 @@ public class PaisService implements PaisRepository{
     }
 
     @Override
-    public Page<Pais> findAll(Pageable arg0) {
+    public Page<Pais> findAll(Pageable pageable) {
         // TODO Auto-generated method stub
         return null;
+    }
+
+    @Override
+    public <S extends Pais> S save(S entity) {
+        return paisRepository.save(entity);
+    }
+
+    @Override
+    public Optional<Pais> findById(Long id) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public boolean existsById(Long id) {
+        // TODO Auto-generated method stub
+        return false;
     }
 
     @Override
@@ -116,75 +114,81 @@ public class PaisService implements PaisRepository{
     }
 
     @Override
-    public void delete(Pais arg0) {
+    public void deleteById(Long id) {
         // TODO Auto-generated method stub
-        
+
+    }
+
+    @Override
+    public void delete(Pais entity) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void deleteAll(Iterable<? extends Pais> entities) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
     public void deleteAll() {
         // TODO Auto-generated method stub
-        
+
     }
 
     @Override
-    public void deleteAll(Iterable<? extends Pais> arg0) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void deleteAllById(Iterable<? extends Long> arg0) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void deleteById(Long arg0) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public boolean existsById(Long arg0) {
-        // TODO Auto-generated method stub
-        return false;
-    }
-
-    @Override
-    public Optional<Pais> findById(Long arg0) {
+    public <S extends Pais> Optional<S> findOne(Example<S> example) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public <S extends Pais> S save(S arg0) {
+    public <S extends Pais> Page<S> findAll(Example<S> example, Pageable pageable) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public <S extends Pais> long count(Example<S> arg0) {
+    public <S extends Pais> long count(Example<S> example) {
         // TODO Auto-generated method stub
         return 0;
     }
 
     @Override
-    public <S extends Pais> boolean exists(Example<S> arg0) {
+    public <S extends Pais> boolean exists(Example<S> example) {
         // TODO Auto-generated method stub
         return false;
     }
 
     @Override
-    public <S extends Pais> Page<S> findAll(Example<S> arg0, Pageable arg1) {
+    public <S extends Pais> List<S> saveAllAndFlush(Iterable<S> entities) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public <S extends Pais> Optional<S> findOne(Example<S> arg0) {
+    public void deleteAllInBatch(Iterable<Pais> entities) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void deleteAllByIdInBatch(Iterable<Long> ids) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public Pais getById(Long id) {
         // TODO Auto-generated method stub
         return null;
     }
-    
+
+    @Override
+    public void deleteAllById(Iterable<? extends Long> ids) {
+        // TODO Auto-generated method stub
+
+    }
+
 }

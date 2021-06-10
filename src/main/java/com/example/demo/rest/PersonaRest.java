@@ -33,7 +33,7 @@ public class PersonaRest {
         
         try {
             Persona personaGuardada = personaService.save(persona);
-        return ResponseEntity.created(new URI("/persona/"+personaGuardada.getId())).body(personaGuardada);
+        return ResponseEntity.created(new URI("/personas/"+personaGuardada.getId())).body(personaGuardada);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }

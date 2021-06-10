@@ -1,30 +1,30 @@
 package com.example.demo.model;
 
-import javax.persistence.Table;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
-
+import javax.persistence.Table;
 
 @Entity
-@Table(schema = "estados",name = "estado")
+@Table(schema = "estados", name = "estado")
 public class Estado {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @ManyToOne
-	@JoinColumn(name="id_pais")
-	private Pais pais;
+    @JoinColumn(name = "id_pais")
+    private Pais pais;
     private String name;
 
-    public Estado(){}
+    public Estado() {
+    }
 
     public Estado(Pais pais, String name) {
+        super();
         this.pais = pais;
         this.name = name;
     }
@@ -45,12 +45,11 @@ public class Estado {
         this.pais = pais;
     }
 
-    public String getName() {
+    public String getname() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setname(String name) {
         this.name = name;
     }
-
 }
