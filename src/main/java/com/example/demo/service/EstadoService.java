@@ -14,35 +14,32 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+
 @Service
-public class EstadoService implements EstadoRepository{
-    //crea inyeccion ala estxancia
+public class EstadoService implements EstadoRepository {
+
     @Autowired
     private EstadoRepository estadoRepository;
 
     @Override
     public List<Estado> findAll() {
-        // TODO Auto-generated method stub
         return estadoRepository.findAll();
     }
-    
     //se puedenc rear metodos en back-end para control de la base de datos mediante los get y los metodos
     // como por ejemplo en este caso solo trae los estados de cierto pais
-    public List<Estado> findAllEstadosByidPais(int id){
-        List<Estado> estadosRespuestas=new ArrayList<>();
+    public List<Estado> findAllByCountry(Long id) {
+        List<Estado> estadosRespuesta = new ArrayList<>();
         List<Estado> estados = estadoRepository.findAll();
-        for(int i =0; i<estados.size(); i++){
-            if(estados.get(i).getPais().getId()==id){
-                estadosRespuestas.add(estados.get(i));
+        for (int i = 0; i < estados.size(); i++) {
+            if (estados.get(i).getPais().getId() == id) {
+                estadosRespuesta.add(estados.get(i));
             }
         }
-        return estadosRespuestas;
+        return estadosRespuesta;
     }
-
     //lista todo lo de la tabla en este caso todos los estados
     @Override
     public List<Estado> findAll(Sort sort) {
-        // TODO Auto-generated method stub
         return estadoRepository.findAll(sort);
     }
 
@@ -61,13 +58,115 @@ public class EstadoService implements EstadoRepository{
     @Override
     public void flush() {
         // TODO Auto-generated method stub
-        
+
     }
 
     @Override
     public <S extends Estado> S saveAndFlush(S entity) {
         // TODO Auto-generated method stub
         return null;
+    }
+
+    @Override
+    public void deleteInBatch(Iterable<Estado> entities) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void deleteAllInBatch() {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public Estado getOne(Long id) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public <S extends Estado> List<S> findAll(Example<S> example) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public <S extends Estado> List<S> findAll(Example<S> example, Sort sort) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public Page<Estado> findAll(Pageable pageable) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public <S extends Estado> S save(S entity) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public Optional<Estado> findById(Long id) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public boolean existsById(Long id) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public long count() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void delete(Estado entity) {
+        estadoRepository.delete(entity);
+    }
+
+    @Override
+    public void deleteAll(Iterable<? extends Estado> entities) {
+        estadoRepository.deleteAll(entities);
+    }
+
+    @Override
+    public void deleteAll() {
+        estadoRepository.deleteAll();
+    }
+
+    @Override
+    public <S extends Estado> Optional<S> findOne(Example<S> example) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public <S extends Estado> Page<S> findAll(Example<S> example, Pageable pageable) {
+        return estadoRepository.findAll(example, pageable);
+    }
+
+    @Override
+    public <S extends Estado> long count(Example<S> example) {
+        return estadoRepository.count(example);
+    }
+
+    @Override
+    public <S extends Estado> boolean exists(Example<S> example) {
+        return estadoRepository.exists(example);
     }
 
     @Override
@@ -89,116 +188,15 @@ public class EstadoService implements EstadoRepository{
     }
 
     @Override
-    public void deleteAllInBatch() {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public Estado getOne(Long id) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
     public Estado getById(Long id) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public <S extends Estado> List<S> findAll(Example<S> example) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public <S extends Estado> List<S> findAll(Example<S> example, Sort sort) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public Page<Estado> findAll(Pageable arg0) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public long count() {
-        // TODO Auto-generated method stub
-        return 0;
-    }
-
-    @Override
-    public void delete(Estado arg0) {
+    public void deleteAllById(Iterable<? extends Long> ids) {
         // TODO Auto-generated method stub
         
     }
 
-    @Override
-    public void deleteAll() {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void deleteAll(Iterable<? extends Estado> arg0) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void deleteAllById(Iterable<? extends Long> arg0) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void deleteById(Long arg0) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public boolean existsById(Long arg0) {
-        // TODO Auto-generated method stub
-        return false;
-    }
-
-    @Override
-    public Optional<Estado> findById(Long arg0) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public <S extends Estado> S save(S arg0) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public <S extends Estado> long count(Example<S> arg0) {
-        // TODO Auto-generated method stub
-        return 0;
-    }
-
-    @Override
-    public <S extends Estado> boolean exists(Example<S> arg0) {
-        // TODO Auto-generated method stub
-        return false;
-    }
-
-    @Override
-    public <S extends Estado> Page<S> findAll(Example<S> arg0, Pageable arg1) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public <S extends Estado> Optional<S> findOne(Example<S> arg0) {
-        // TODO Auto-generated method stub
-        return null;
-    }
 }

@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/estado/")
+@RequestMapping("/estados/")
 public class EstadoRest {
     @Autowired 
     private EstadoService estadoService;
 
     //se le dice que recibira una variable id pais la cual limpiara en la parte de abajo en el metodo 
-    @GetMapping({"{id}"})
-    private ResponseEntity<List<Estado>> getAllEstadosBYPais(@PathVariable("id") int id_pais){
+    @GetMapping("{id}")
+    private ResponseEntity<List<Estado>> getAllEstadosBYPais(@PathVariable("id") Long id_pais){
         return ResponseEntity.ok(estadoService.findAllEstadosByidPais(id_pais));
     }
     
